@@ -9,6 +9,12 @@
 			right=1.83cm]{geometry}	% Tamanho das bordas
 \usepackage{indentfirst}			% Indentação da primeira linha
 \usepackage{graphicx}				% Inserir imagens
+\usepackage{fancyhdr}				% Cabeçalhos e rodapes personalizados
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{AQUI VAI A IMAGEM DE CABEÇALHO}
+\cfoot{AQUI COLOCAMOS A IMAGEM DE RODAPÉ}
 
 %%%%% Texto de exemplo %%%%%
 \usepackage{lipsum}					% Texto de exemplo do tipo lorem ipsum
@@ -32,6 +38,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
+\thispagestyle{fancy}
 
 \section*{\center Resumo}
 \lipsum[1-2]
