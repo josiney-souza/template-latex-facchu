@@ -28,7 +28,16 @@
      \includegraphics[width=\paperwidth,height=2.5cm]{cabecalho.jpg}}}%
 }
 
-\cfoot{\includegraphics[width=\textwidth,height=1.5cm]{rodape.jpg}}
+% Imagem do rodape ocupando toda a área visivel do rodape
+% Fonte:
+% https://tex.stackexchange.com/questions/459905/set-footer-height
+\fancyfoot[L]{%
+  \hspace*{\dimexpr -1in-\oddsidemargin}%
+  \makebox[0pt][l]{\normalsize %the [0pt] hides the width
+      \raisebox{\dimexpr\headheight+\dp\strutbox
+          +1in+\topmargin-\height}[0pt][0pt]{% the [0pt][0pt] hides height and depth
+     \includegraphics[width=\paperwidth,height=1.5cm]{rodape.jpg}}}%
+}
 
 \usepackage{lipsum}					% Texto de exemplo do tipo lorem ipsum
 
