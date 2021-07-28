@@ -16,7 +16,18 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\chead{\includegraphics[width=\textwidth,height=2cm]{cabecalho.jpg}}
+
+% Imagem do cabecalho ocupando toda a área visivel do cabecalho
+% Fonte:
+% https://tex.stackexchange.com/questions/97048/image-as-a-header-extend-the-top-of-page-limits
+\fancyhead[L]{%
+  \hspace*{\dimexpr -1in-\oddsidemargin}%
+  \makebox[0pt][l]{\normalsize %the [0pt] hides the width
+      \raisebox{\dimexpr\headheight-\dp\strutbox
+          +1in+\topmargin-\height}[0pt][0pt]{% the [0pt][0pt] hides height and depth
+     \includegraphics[width=\paperwidth,height=2.5cm]{cabecalho.jpg}}}%
+}
+
 \cfoot{\includegraphics[width=\textwidth,height=1.5cm]{rodape.jpg}}
 
 \usepackage{lipsum}					% Texto de exemplo do tipo lorem ipsum
